@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-  <bean id="..." class="...">
+  <bean id="te" class="com.xiaoti.lovely.model.Test">
     <!-- collaborators and configuration for this bean go here -->
   </bean>
 
-  <bean id="..." class="...">
+  <bean id="tr" class="com.xiaoti.lovely.model.Trst">
     <!-- collaborators and configuration for this bean go here -->
   </bean>
 
