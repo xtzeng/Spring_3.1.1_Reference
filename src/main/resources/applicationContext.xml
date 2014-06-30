@@ -15,5 +15,6 @@
 	
 	<bean class="com.spring.test.di.BeanPostPrcessorImpl"/>
 	
-	<bean name="logic" class="com.spring.test.di.Logic"/>
+	<bean name="logic" class="com.spring.test.di.Logic" scope="singleton"/>
+	<bean name="anotherBean" class="com.spring.test.di.AnotherBean" lazy-init="true"/>
 </beans>

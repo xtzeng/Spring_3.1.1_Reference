@@ -20,6 +20,7 @@ public class TestMain {
               "applicationContext.xml");
        // 得到Bean
        ctx.getBean("logic");
+       //ctx.getBean("anotherBean");
     }
 }
 
