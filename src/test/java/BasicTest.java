@@ -11,7 +11,7 @@ public class BasicTest {
 	public void testGetBean() {
 		ApplicationContext context =
 			    new ClassPathXmlApplicationContext(new String[] {"beans.xml"});
-		Test test = (Test) context.getBean("te");
+		Test test = (Test) context.getBean("te",Test.class);
 		test.printTest();
 		
 	}
