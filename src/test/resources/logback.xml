@@ -1,4 +1,4 @@
-<configuration scan="true" scanPeriod="30 seconds">
+<configuration scan="true" scanPeriod="60 seconds">
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <!-- encoders are assigned the type
@@ -8,7 +8,25 @@
     </encoder>
   </appender>
 
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+    <file>logs/test.log</file>   
+   
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">   
+      <fileNamePattern>tests.%i.log.zip</fileNamePattern>   
+      <minIndex>1</minIndex>   
+      <maxIndex>3</maxIndex>   
+    </rollingPolicy>   
+   
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">   
+      <maxFileSize>5MB</maxFileSize>   
+    </triggeringPolicy>   
+    <encoder>   
+      <pattern>%d{HH:mm:ss.SSS} %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>   
+    </encoder>   
+  </appender>  
+
   <root level="debug">
+    <appender-ref ref="FILE" />
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>
